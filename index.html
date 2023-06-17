@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/assets/index-e5867ad0.js"></script>
+    <link rel="stylesheet" href="/assets/index-29469bf4.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="container">
+        <h3>Draw Anything you want</h3>
+        <div class="canvas-container">
+          <div class="control-panel-container">
+            <div class="color-container"></div>
+            <div class="control-panel-display">x : 0 , y: 0</div>
+            <div class="control-side-panel">
+              <select id="rubberbandOptions">
+                <option value="line">line</option>
+                <option value="circle">circle</option>
+                <option value="rectangle">rectangle</option>
+                <option value="polygon">polygon</option>
+              </select>
+              <select name="polygonSides" id="polygonSides">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+              <select name="polygonStartAngle" id="polygonStartAngle">
+                <option value="45">45</option>
+                <option value="0">0</option>
+                <option value="30">30</option>
+                <option value="60">60</option>
+                <option value="90">90</option>
+              </select>
+              <div class="radio-options-mode">
+                <div class="drawing-radio">
+                  <label for="drawing">Drawing</label>
+                  <input
+                    type="radio"
+                    id="drawing"
+                    name="toggle"
+                    value="drawing"
+                  />
+                </div>
+
+                <div class="erasing-radio">
+                  <label for="erasing">Erasing</label>
+                  <input
+                    type="radio"
+                    id="erasing"
+                    name="toggle"
+                    value="erasing"
+                  />
+                </div>
+                <div class="editing-radio">
+                  <label for="editing">Editing</label>
+                  <input
+                    type="radio"
+                    id="editing"
+                    name="toggle"
+                    value="editing"
+                  />
+                </div>
+                <div class="pendrawing-radio">
+                  <label for="penDrawing">Pen Drawing</label>
+                  <input
+                    type="radio"
+                    id="penDrawing"
+                    name="toggle"
+                    value="penDrawing"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <canvas class="game-canvas" id="drawing-canvas">
+            Your Browser doesn't support HTML5 canvas;
+          </canvas>
+        </div>
+
+        <div class="control-box">
+          <div class="select-box">
+            <label for="color">Fill Color : </label>
+            <input type="color" name="color" id="color" />
+            <label for="lineWidth">Thickness : </label>
+            <input
+              type="range"
+              name="lineWidth"
+              id="lineWidth"
+              min="1"
+              max="20"
+              value="1"
+            />
+            Stroke color:
+            <select id="strokeStyleSelect">
+              <option value="red">red</option>
+              <option value="green">green</option>
+              <option value="blue">blue</option>
+              <option value="orange">orange</option>
+              <option value="cornflowerblue" selected>cornflowerblue</option>
+              <option value="goldenrod">goldenrod</option>
+              <option value="navy">navy</option>
+              <option value="purple">purple</option>
+            </select>
+            Fill:
+            <input type="checkbox" checked name="fillBox" id="fillBox" />
+            Guidewires:
+            <input id="guidewireCheckbox" type="checkbox" checked />
+            <input id="eraseAllButton" type="button" value="Erase all" />
+          </div>
+        </div>
+      </div>
+      <div class="floatingModal" style="display: none">
+        <form class="editOptions">
+          <input type="radio" id="rotate" name="edit_options" value="rotate" />
+          <label for="rotate">Rotate</label><br />
+          <input type="radio" id="scale" name="edit_options" value="scale" />
+          <label for="scale">Scale</label><br />
+        </form>
+      </div>
+    </div>
+    
+  </body>
+</html>
